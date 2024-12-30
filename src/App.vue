@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="mainPage">
-    <app-header/>
+    <app-header />
     <router-view></router-view>
   </div>
 </template>
@@ -17,6 +17,13 @@ export default {
 </script>
 
 <style scoped>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -26,8 +33,8 @@ export default {
 }
 
 .mainPage {
+  width: 100%;
   height: 100vh;
-  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -39,21 +39,4 @@ export default {
     font-size: 20px;
     background-color: #2d99ae;
 }
-#idButton{
-    margin-top: 10px;
-    background-color: #f9f9f9;
-    border: none;
-    color: #2d99ae;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    font-weight: bold;
-    text-transform: uppercase; 
-}
 </style>

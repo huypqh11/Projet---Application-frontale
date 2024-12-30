@@ -1,10 +1,9 @@
 <template>
   <div class="header-wrapper">
     <button type="button" class="house-btn" @click="backToMainPage">
-      <img src="./img/home.svg" alt="" class="house"/>
+      <img src="./img/home.svg" alt="" class="house" />
     </button>
-    <img src="./img/VNG.png" alt="" class="logo"/>
-    <div></div>
+    <img src="./img/VNG.png" alt="" class="logo" />
   </div>
 </template>
 
@@ -13,7 +12,7 @@ export default {
   name: "AppHeader",
   methods: {
     backToMainPage() {
-      if(this.$route.name === "Game") {
+      if (this.$route.name === "Game") {
         this.$store.commit('stopGame')
       } else {
         this.$router.push("/")
@@ -25,21 +24,24 @@ export default {
 
 <style scoped>
 .header-wrapper {
-  z-index: 10;
+  width: 100%;
   height: 70px;
   display: flex;
-  justify-content: space-between;
-  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  top: 0;
   position: fixed;
-  padding: 10px 20px;
-  top:0;
+  padding: 10px 0px;
+  z-index: 10;
 }
 
 .house-btn {
-  margin-left: 10px;
   border: 0;
   border-radius: 0;
   background: none;
+  position: absolute;
+  left: 10px;
+  top: 10px;
 }
 
 .house {
@@ -47,8 +49,7 @@ export default {
 }
 
 .logo {
-  display: flex; 
-  align-items: center; 
+  width: 120px;
   padding: 5px 20px; 
   border-radius: 12px; 
   background-color: #f9f9f9; 

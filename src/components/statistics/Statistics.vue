@@ -1,62 +1,62 @@
 <template>
-    <div class="statistics">
-        <div class="stats-wrapper">
-            <div class="row">
-              <div class="bold">Temps moyen de jeu :</div>
-              <div> {{ this.averageTime }}</div>
-            </div>
-            <div class="row">
-              <div class="bold">Nombre de tentatives moyennes : </div>
-              <div> {{ this.nbTry }}</div>
-            </div>
-            <div v-if="this.nbGames === 0" class="row">
-              <div class="bold">Pourcentage de victoire : </div>
-              <div> -- %</div>
-            </div>
-            <div v-else class="row">
-              <div class="bold">Pourcentage de victoire : </div>
-              <div> {{ this.percentageWin }} %</div>
-            </div>
-            <div class="row">
-              <div class="bold">Ensemble des parties jouées : </div>
-            </div>
-            <games-played></games-played>
-        </div>
-
-        <router-link to="/">
-          <input type="button" id="idButton" value="Home">
-        </router-link>
-
+  <div class="statistics">
+    <div class="stats-wrapper">
+      <div class="row">
+        <div class="bold">Temps moyen de jeu :</div>
+        <div> {{ this.averageTime }}</div>
+      </div>
+      <div class="row">
+        <div class="bold">Nombre de tentatives moyennes : </div>
+        <div> {{ this.nbTry }}</div>
+      </div>
+      <div v-if="this.nbGames === 0" class="row">
+        <div class="bold">Pourcentage de victoire : </div>
+        <div> -- %</div>
+      </div>
+      <div v-else class="row">
+        <div class="bold">Pourcentage de victoire : </div>
+        <div> {{ this.percentageWin }} %</div>
+      </div>
+      <div class="row">
+        <div class="bold">Ensemble des parties jouées : </div>
+      </div>
+      <games-played></games-played>
     </div>
+
+    <router-link to="/">
+      <input type="button" id="idButton" value="Home">
+    </router-link>
+
+  </div>
 </template>
 
 <script>
 import GamesPlayed from './GamesPlayed.vue'
-import {helperMethods} from '../../utils.js'
+import { helperMethods } from '../../utils.js'
 
-export default{
-    name: 'Statistics',
-    components: {
-        GamesPlayed
-    },
-    data: function(){
-        return{
-        }
-    },
-    computed: {
-        percentageWin: function(){
-            return this.$store.getters.getPercentage.toFixed(2);
-        },
-        nbTry: function(){
-            return this.$store.getters.getNbTry.toFixed(2);
-        },
-        averageTime: function(){
-            return helperMethods.convertChrono(this.$store.getters.getAverageTime.toFixed(2));
-        },
-        nbGames: function(){
-          return (this.$store.getters.getGamesPlayed).length;
-        }
+export default {
+  name: 'Statistics',
+  components: {
+    GamesPlayed
+  },
+  data: function () {
+    return {
     }
+  },
+  computed: {
+    percentageWin: function () {
+      return this.$store.getters.getPercentage.toFixed(2);
+    },
+    nbTry: function () {
+      return this.$store.getters.getNbTry.toFixed(2);
+    },
+    averageTime: function () {
+      return helperMethods.convertChrono(this.$store.getters.getAverageTime.toFixed(2));
+    },
+    nbGames: function () {
+      return (this.$store.getters.getGamesPlayed).length;
+    }
+  }
 }
 </script>
 
